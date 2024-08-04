@@ -1,0 +1,84 @@
+
+.contenedor__box{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    
+}
+
+.contenedor__loggin{
+    background-color: chocolate;
+    box-sizing: border-box;
+    width: 300px;
+    height: 330px;
+}
+
+
+.titulo__loggin{
+    margin-top: 30px;
+}
+
+.titulo__loggin h2{
+    text-align: center;
+    font-size: 20px !important;
+}
+
+.input__box{
+    position: relative;
+    display: block;
+}
+
+.input__box label{
+    z-index: 1;
+    padding-left: 55px;
+    padding-top: 40px;
+}
+
+.input__box input{
+    z-index: 10;
+    position: absolute;
+    top: 65px;
+    left: 43px;
+    background-origin: #db9155 ;
+    border: none;
+    border: 2px solid #db9155;
+    border-radius: 10px;
+    width: 220px;
+    height: 32px;
+    font-size: 14px;
+    text-indent: 10px;
+    
+}
+
+.input__box input:focus{
+    height: 32px;
+    font-size: 14px;
+   text-indent: 10px;
+    outline: none;
+    box-shadow: inset 0 0 0 2px #007bff;
+   
+}
+
+
+.button__loggin{
+    position: relative;
+}
+
+.button__loggin button{
+    position: absolute;
+    top: 60px;
+    left: 45px;
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+
+}
+
+.button__loggin button:hover{
+    background-color: rgb(36, 192, 83);
+    color: white;
+    transform: scale(1.03);
+}
