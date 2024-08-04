@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestacion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../static/css/prestacionStyles.css">
+    <link rel="stylesheet" href="css/prestacionStyles.css">
+
+</head>
+
+<body>
+    <div class="contenedor container">
+        <div class="encabezado">
+            <div class="titulo">
+            </div>
+            <h1>Resumen solicitud</h1>
+            <div class="boton__enviarSolicitud" th:if="${#lists.size(listaCarrito)>0}">
+                <form action="/enviarSolicitud" method="get" class="boton__form">
+                    <button type="submit">Solicitar Libros</button>
+                </form>
+            </div>
+            <div class="boton__volver">
+                <form action="/listadoLibros" method="get">
+                    <button type="submit"><i class="fa-solid fa-reply"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="contenedor-tabla">
+            <div class="mensaje__carritoVacio" th:if="${#lists.size(listaCarrito)==0 &&codigoSolicitud == null}">
+                <p>No hay libros Seleccionados</p>
+            </div>
+
+            <table class="tabla" th:if="${#lists.size(listaCarrito)>0}">
+
+                <tr>
+                    <th class="tabla__head">Libros: </th>
+                </tr>
+
+                <tr th:each="libro : ${listaCarrito}">
+
+                    <td class="tabla__item--nombre" th:text="${libro.nombre}">nombreLibro1</td>
+                    <td class="tabla__item" th:text="${libro.autor}">autor</td>
+                    <td class="tabla__item">img--libro</td>
+                    <td class="tabla__item " th:text="${libro.codigo}">id Libro</td>
+                    <form action="/eliminarDelCarrito" method="post">
+                        <input type="hidden" th:value="${libro.codigo}" name="libroIdTxt">
+                        <td class="tabla__item--boton"><button type="submit">Quitar</button></td>
+                    </form>
+                </tr>
+            </table>
+
+            <div class="mensaje__solicitud" th:if="${codigoSolicitud != null}">
+                <p class="mensaje__solicitud--msj">Solicitud enviada con éxito</p>
+                <p class="mensaje__solicitud--cod" th:text="'Código solicitud: '+${codigoSolicitud}"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/d8f7c001f6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

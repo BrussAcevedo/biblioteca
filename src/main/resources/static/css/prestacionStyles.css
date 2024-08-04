@@ -1,0 +1,113 @@
+.contenedor{
+    background-color: rgb(200, 255, 209);
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.contenedor-tabla{
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+}
+
+.tabla{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.tabla__item, .tabla__item--nombre, .tabla__item--boton{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.tabla__item--nombre{
+    font-weight: 600;
+    font-size: 16px;
+    
+}
+
+
+.encabezado{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+    margin-bottom: 80px;
+}
+
+
+.boton__enviarSolicitud{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+
+}
+
+.boton__enviarSolicitud button{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(170, 145, 0);
+    color: white;
+    font-weight: 600;
+    height: 50px;
+    width: 120px;
+}
+
+.boton__enviarSolicitud button:hover{
+    background-color: rgb(170, 102, 0);
+    transform: scale(1.05);
+}
+
+.mensaje__carritoVacio{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 200px;
+}
+
+.tabla__item--boton button{
+    background-color: rgb(1, 95, 64);
+    border: none;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+    color: rgb(240, 255, 174);
+}
+
+.tabla__item--boton button:hover{
+    background-color: rgb(0, 62, 87);
+    color: rgb(255, 255, 255);
+}
+
+.boton__volver{
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+.boton__volver button{
+    background-color: rgb(1, 95, 64);
+    border: none;
+    border-radius: 5px;
+    color: rgb(240, 255, 174);
+    width: 50px;
+    height: 50px;
+}
+
+.boton__volver button:hover{
+    background-color: rgb(170, 102, 0);
+    transform: scale(1.05);
+}
+
+.mensaje__solicitud p{
+    text-align: center;
+}
+
+.mensaje__solicitud--msj{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+mensaje__solicitud--cod{
+    font-size: 14px;
+}
