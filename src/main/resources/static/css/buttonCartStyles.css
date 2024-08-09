@@ -1,9 +1,12 @@
-.encabezado .boton__cart{
-    
-    margin-top: 20px;
+.boton__cart{
+    position: absolute;
+    top: 35%;
+    right: 10%;
+    display: flex;
+    margin-top: -10px;
 }
 
-.encabezado .boton__cart button {
+.boton__cart button {
     position: relative;
     width: 40px;
     height: 40px;
@@ -12,22 +15,20 @@
     border-radius: 10% 10%;
    
 }
-.encabezado .boton__cart button i{
+.boton__cart button i{
     margin-top: 5px;
     font-size: 20px;
     color: #247000;
 }
 
-
-.encabezado .boton__cart button:hover{
+.boton__cart button:hover{
     background-color: #87d363;   
 }
-
-.encabezado .boton__cart button:hover i{
+.boton__cart button:hover i{
     color: white;
 }
 
-.encabezado .boton__cart button label{
+.boton__cart button label{
     position: absolute;
     left: 30px;
     top: 18px;

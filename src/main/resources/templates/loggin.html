@@ -33,8 +33,8 @@
             <div class="button__loggin">
                 <button type="submit">Iniciar Sesion</button>
             </div>
-            <div class="msj__error">
-                <p th:text="${errorMensaje}"></p>
+            <div class="msj__error" th:if="${errorMensaje}">
+                <p>Las Credenciales no son correctas</p>
             </div>
         </form>
     </div>

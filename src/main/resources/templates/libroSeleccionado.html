@@ -13,61 +13,78 @@
     <link rel="stylesheet" href="css/libroSelectStyles.css">
     <link rel="stylesheet" href="../static/css/libroSelectStyles.css">
 
+    <link rel="stylesheet" href="../static/css/buttonBackStyles.css" th:href="@{css/buttonBackStyles.css}">
+    <link rel="stylesheet" href="../static/css/navBarStyles.css" th:href="@{css/navBarStyles.css}">
 
+    <link rel="stylesheet" href="../static/css/footerStyles.css" th:href="@{css/footerStyles.css}">
 </head>
 
 <body>
+    <div class="contenido">
 
-    <div class="libro container row">
 
-        <div class="libro__titulo col-12">
-            <h1 th:text="${libroSeleccionado.nombre}">Titulo Libro</h1>
-        </div>
 
-        <div class="libro__autor col-12">
-            <p th:text="${libroSeleccionado.autor}"> Autor apellido</p>
-        </div>
+        <div th:replace="html/navBar:: navBar"></div>
 
-        <div class="libro__imagen col-6">
-            <img src="https://images.cdn1.buscalibre.com/fit-in/360x360/12/94/1294029d1a823549a75188a2ca0e32cd.jpg"
-                alt="">
-        </div>
+        <div th:replace="html/buttonBack :: buttonBack"></div>
 
-        <div class="libro__contenedor col-6">
-            <div class="descripcion">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat est iste recusandae
-                    asperiores ipsa quidem cupiditate tempora eveniet a.</p>
+        <div class="libro row">
+            <div class="titulo__autor">
+                <div class="libro__titulo">
+                    <h1 th:text="${libroSeleccionado.nombre}">Titulo Libro</h1>
+                </div>
+
+                <div class="libro__autor">
+                    <p th:text="${libroSeleccionado.autor}"> Autor apellido</p>
+                </div>
             </div>
 
-            <div class="stock">
-                <p>10</p>
+
+            <div class="libro__imagen col-6">
+                <img src="https://images.cdn1.buscalibre.com/fit-in/360x360/12/94/1294029d1a823549a75188a2ca0e32cd.jpg"
+                    alt="">
             </div>
 
-            <div class="libro__boton">
-                <form action="/agregarACarrito" method="get">
-                    <input type="hidden" th:value="${libroSeleccionado.codigo}" name="libroIdTxt">
-                    <button type="submit" id="libro__boton--reserva">Reservar</button>
-                </form>
-                
+            <div class="libro__contenedor col-6">
+                <div class="descripcion">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quaerat est iste recusandae
+                        asperiores ipsa quidem cupiditate tempora eveniet a.</p>
+                </div>
+
+                <div class="libro__stock">
+                    <p th:text="${mapStock[libroSeleccionado.codigo]}"></p>
+                </div>
+
+                <div class="libro__boton" th:if="${mapStock[libroSeleccionado.codigo]} > 0">
+                    <form action="/agregarACarrito" method="get">
+                        <input type="hidden" th:value="${libroSeleccionado.codigo}" name="libroIdTxt">
+                        <button type="submit" id="libro__boton--reserva">Reservar</button>
+                    </form>
+                </div>
+                <div class="libro__boton libro__boton--bloquear" th:if="${mapStock[libroSeleccionado.codigo]} == 0">
+                    <form action="/agregarACarrito" method="get">
+                        <input type="hidden" th:value="${libroSeleccionado.codigo}" name="libroIdTxt">
+                        <button type="submit" id="libro__boton--reserva">Reservar</button>
+                    </form>
+
+                </div>
             </div>
+
+
         </div>
-
-
     </div>
 
 
+<div th:replace="html/footer :: footer"></div>
 
 
 
 
-
+    <script src="https://kit.fontawesome.com/d8f7c001f6.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="js/libroSelectScripts.js"></script>
-    <script src="../static/js/libroSelectScripts.js"></script>
-    <script src="js/buttonCartScript.js"></script>
-    <script src="../static/js/buttonCartScript.js"></script>
+
 </body>
 
 </html>

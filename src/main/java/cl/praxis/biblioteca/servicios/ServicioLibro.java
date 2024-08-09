@@ -1,8 +1,10 @@
 package cl.praxis.biblioteca.servicios;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import cl.praxis.biblioteca.DAO.LibroDAO;
@@ -39,6 +41,20 @@ public class ServicioLibro {
             }    
         
         return false;
+    }
+
+    public List<LibroDTO> busuqedaLibro(List<LibroDTO> listaEntrada, String entradaBusqueda){
+        List<LibroDTO>listaResultado = new ArrayList<>();
+        listaResultado.clear();
+        for(LibroDTO libro: listaEntrada){
+            if(StringUtils.containsAnyIgnoreCase(libro.getNombre(), entradaBusqueda)|| StringUtils.containsAnyIgnoreCase(libro.getAutor(), entradaBusqueda)){
+                listaResultado.add(libro);
+            }
+        }
+        
+
+        
+        return listaResultado;
     }
 
 

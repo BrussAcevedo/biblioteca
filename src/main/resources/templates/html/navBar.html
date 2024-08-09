@@ -1,0 +1,26 @@
+
+    <div th:fragment="navBar">
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="/listadoLibros">Galeria Libros</a></li>
+                <li><a href="#">Agregar Libro</a></li>
+                <li><a href="#">Mis Solicitudes</a></li>
+                <li><a href="#">Devolver Libros </a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+    
+            <div class="boton__cart d-flex justify-content-center">
+                <form action="/verCarrito" method="get">
+                    <button type="submit" name="verCarrito">
+                        <i class="fa-solid fa-book"></i>
+                        <span th:if="${#lists.size(listaCarrito)>0}">
+                            <label for="numCartTxt" class="butt on__cart--numero"
+                                th:text="${#lists.size(listaCarrito)}">1</label>
+                        </span>
+                    </button>
+                </form>
+            </div>
+    
+        </nav>
+    </div>

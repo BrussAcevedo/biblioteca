@@ -1,0 +1,27 @@
+footer{
+    width: 100%;
+    background-color: rgb(0, 48, 73);
+    height: 150px;
+}
+
+footer div p, a{
+    margin-top: 60px;
+    color: white;
+}
+
+footer .footer__RRSS{
+    display: flex;
+}
+
+footer i{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+footer i:hover{
+    color: aqua;
+}
+
+.row{
+    width: 100%;
+}

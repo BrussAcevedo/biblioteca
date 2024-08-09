@@ -1,0 +1,78 @@
+html, body{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.contenido{
+   height: 95vh;
+}
+
+.boton__volver{
+    margin-top: 30px;
+}
+
+
+.libro{
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.titulo__autor{
+   padding-left: 200px;
+   
+}
+
+.libro__imagen{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.libro .libro__contenedor{ 
+    vertical-align: center;
+}
+
+.libro__contenedor .descripcion{
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+.libro__contenedor .descripcion p{
+    text-align: justify;
+}
+
+.libro__stock{
+    margin-top: 60px;
+    font-weight: 600;
+}
+
+.libro__stock, .libro__boton{
+    display: flex;
+    justify-content: center;
+}
+
+.libro__boton button{
+    width: 100px;
+    height: 40px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.libro__boton button:hover{
+    background-color: rgb(73, 189, 173);
+    color: white;
+}
+
+.libro__boton--bloquear button{
+    pointer-events: none;
+    background-color: darkgray;
+    text-decoration: line-through;
+}
+
